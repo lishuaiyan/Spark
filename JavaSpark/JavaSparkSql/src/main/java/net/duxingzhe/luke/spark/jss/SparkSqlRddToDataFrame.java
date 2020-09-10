@@ -21,7 +21,7 @@ import static org.apache.arrow.flatbuf.Type.Map;
  * @CreateDate 2020/09/10
  * @UpdateDate 2020/09/10
  */
-public class SparkSqlDataFrameExample {
+public class SparkSqlRddToDataFrame {
     public static class Person implements Serializable {
         private String name;
         private Integer age;
