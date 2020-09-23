@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JavaSparkSql" />
-        <module name="SparkRDD" />
+        <module name="JavaSparkSqlDemo" />
+        <module name="SparkInAction" />
       </profile>
     </annotationProcessing>
   </component>

@@ -1,15 +1,14 @@
-package net.duxingzhe.luke.spark.java.sql
-
+package net.duxingzhe.luke.spark.scala.sql
 
 import org.apache.spark.sql.functions.col
-import org.apache.spark.sql.{Encoders, Row, SparkSession}
-import org.apache.spark.sql.types._
+import org.apache.spark.sql.types.{DoubleType, StringType, StructField, StructType}
+import org.apache.spark.sql.{Row, SparkSession}
 
-object MovieUsersAnalyzerDataFrame {
+object ScalaDFMovieUsersAnalyzer {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession
       .builder()
-      .appName("MovieUsersAnalyzerDataFrame")
+      .appName("ScalaDFMovieUsersAnalyzer")
       .master("local[*]")
       .getOrCreate()
 

@@ -1,4 +1,4 @@
-package net.duxingzhe.luke.spark.java.rdd.util
+package net.duxingzhe.luke.spark.scala.rdd.util
 
 class SecondarySortKey(val first: Double, val second: Double) extends Ordered[SecondarySortKey] with Serializable {
   override def compare(other: SecondarySortKey): Int = {

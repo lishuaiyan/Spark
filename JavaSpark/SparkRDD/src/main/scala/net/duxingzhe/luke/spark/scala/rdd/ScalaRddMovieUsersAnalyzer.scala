@@ -1,13 +1,13 @@
 package net.duxingzhe.luke.spark.scala.rdd
 
-import net.duxingzhe.luke.spark.java.rdd.util.SecondarySortKey
+import net.duxingzhe.luke.spark.scala.rdd.util.SecondarySortKey
 import org.apache.spark.sql.SparkSession
 
-object MovieUsersAnalyzer {
+object ScalaRddMovieUsersAnalyzer {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession
       .builder()
-      .appName("MovieUsersAnalyzer")
+      .appName("ScalaRddMovieUsersAnalyzer")
       .master("local[*]")
       .getOrCreate()
     val sc = spark.sparkContext
