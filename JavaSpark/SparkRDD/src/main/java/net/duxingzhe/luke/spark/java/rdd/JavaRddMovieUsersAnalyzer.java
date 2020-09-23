@@ -20,6 +20,10 @@ public class JavaRddMovieUsersAnalyzer {
                 .builder()
                 .appName("JavaRddMovieUsersAnalyzer")
                 .master("local[*]")
+                /*
+                getOrCreate方法检测当前线程是否有一个已经存在的ThreadLocal级别的SparkSession，如果有则返回它
+                如果没有，则检测是否有全局级别的SparkSession，有则返回，没有则创建新的SparkSession
+                 */
                 .getOrCreate();
 
         JavaSparkContext sc = JavaSparkContext.fromSparkContext(spark.sparkContext());
@@ -93,6 +97,10 @@ public class JavaRddMovieUsersAnalyzer {
         JavaRDD<String> sortedResult = sorted.map(Tuple2::_2);
 
         sortedResult.take(10).forEach(System.out::println);
+
+        // 关闭sparkContext
+        sc.stop();
+        // 关闭 SparkSession
         spark.stop();
 
     }
