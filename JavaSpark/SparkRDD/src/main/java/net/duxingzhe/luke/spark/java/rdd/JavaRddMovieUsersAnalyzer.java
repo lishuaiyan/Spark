@@ -46,7 +46,7 @@ public class JavaRddMovieUsersAnalyzer {
         // 得到 包含电影ID 和 平均分的 JavaPairRDD
         JavaPairRDD<String, Double> avgRatings = moviesAndRatings.mapToPair(x -> new Tuple2<>(x._1, x._2._1 / x._2._2));
 
-        avgRatings.join(movieInfo).mapToPair(x -> new Tuple2<>(x._2._1, x._2._2))
+        avgRatings.join(movieInfo).mapToPair(x -> new Tuple2<>(x._2()._1(), x._2()._2()))
                 .sortByKey(false)
                 .take(10)
                 .forEach( record -> System.out.println(record._2 + "评分为： " + record._1 ));
